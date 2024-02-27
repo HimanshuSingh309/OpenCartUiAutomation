@@ -123,8 +123,8 @@ public class JavaScriptUtils {
 		public void flash(WebElement element) {
 			String bgcolor = element.getCssValue("backgroundColor");
 			for (int i = 0; i < 5; i++) {
-				changeColor("rgb(0,200,0)", element);// Green
-				changeColor(bgcolor, element);// Purple
+				changeColor("rgb(0,200,0)", element);//Green
+				changeColor(bgcolor, element);//Purple
 			}
 		}
 
