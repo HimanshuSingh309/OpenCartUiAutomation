@@ -21,6 +21,8 @@ public class ProductDetailsPage {
 	private By ProductImages = By.cssSelector("ul.thumbnails img");
 	private By ProductMetaData = By.xpath("//div[@id='content']//ul[@class='list-unstyled'][1]/li");
 	private By ProductPricingData = By.xpath("//div[@id='content']//ul[@class='list-unstyled'][2]/li");
+	private By AddToCartBtn = By.id("button-cart");
+	private By AddToCartSuccessMsg = By.xpath("//div[@class='alert alert-success alert-dismissible']");
 
 	//It maintains the random order
 	private Map<String, String> ProductMap = new HashMap<String, String>();
@@ -84,6 +86,13 @@ public class ProductDetailsPage {
 		System.out.println(ProductMap);
 		
 		return ProductMap;
+	}
+	
+	public String getAddToCartSuccessMessage() {
+		eleUtil.doClick(AddToCartBtn);
+		String ActualsuccessMsg = eleUtil.waitForVisibilityOfElement(AddToCartSuccessMsg, AppConstants.MEDIUM_DEFAULT_WAIT).getText();
+		System.out.println("Success msg on click event on Add To Cart Btn : " + ActualsuccessMsg );
+		return ActualsuccessMsg;
 	}
 
 }
