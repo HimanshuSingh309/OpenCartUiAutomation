@@ -57,5 +57,15 @@ public class ProductDetailsPageTest extends BaseTest {
 		softAssert.assertAll();
 		
 	}
+	
+	@Description("Verify that user is able to see the success message while adding the product into Cart. ")
+	@Test
+	public void addToCartSuccessMsgTest() {
+		searchResultsPage = accountspage.doSearch("MacBook");
+		productDetailsPage = searchResultsPage.selectProduct("MacBook Air");
+		String actAddToCartSuccessMsg = productDetailsPage.getAddToCartSuccessMessage();
+		Assert.assertTrue(actAddToCartSuccessMsg.contains("Success: You have added "));
+		
+	}
 
 }
