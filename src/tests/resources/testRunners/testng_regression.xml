@@ -8,7 +8,7 @@
 		<listener
 			class-name="com.qa.opencart.listeners.TestAllureListener" />
 
-		 <listener class-name="com.qa.opencart.listeners.AnnotationTransformer" />  
+		<!-- <listener class-name="com.qa.opencart.listeners.AnnotationTransformer" /> -->  
 			
 
 	</listeners>
@@ -22,8 +22,8 @@
 		</classes>
 	</test>
 
-	<test name="Accounts Page Test">
-		<parameter name="browser" value="firefox"></parameter>
+	 <test name="Accounts Page Test">
+		<parameter name="browser" value="chrome"></parameter>
 
 		<classes>
 			<class name="com.qa.opencart.tests.AccountsPageTest" />
@@ -31,7 +31,7 @@
 	</test>
 
 	<test name="Negative Login Page Test">
-		<parameter name="browser" value="firefox"></parameter>
+		<parameter name="browser" value="chrome"></parameter>
 
 		<classes>
 			<class name="com.qa.opencart.tests.NegativeLoginPageTest" />
@@ -50,6 +50,6 @@
 
 		<classes>
 			<class name="com.qa.opencart.tests.RegisterPageTest" />
-		</classes>
+		</classes> 
 	</test>
 </suite> 
